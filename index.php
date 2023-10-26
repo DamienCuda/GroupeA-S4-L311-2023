@@ -1,4 +1,7 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<?php 
+// DEBUG 26/10/2023 (JL) - Il manquait le "e" de "include" (+ mise en forme)
+include('inc/inc.functions.php');
+?>
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -10,21 +13,33 @@
 		<title>Story by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<?php include 'inc/inc.css.php'; ?>
+		<?php
+		// MISE EN FORME 26/10/2023 (JL) - Parenthèses ajoutées
+		include('inc/inc.css.php');
+		?>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
+					// DEBUG 26/10/2023 (JL) - "getPagesTemplate" au lieu de "getPageTemplate"
+					// DEBUG 26/10/2023 (JL) - "array_key_exist" au lieu de "array_key_exists"
+					getPageTemplate(
+						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					); 
 				?>
-				<?php include 'inc/tpls-footer.php'; ?>
+				<?php
+				// DEBUG 26/10/2023 (JL) - "inc/tpls-footer.php" au lieu de "inc/tpl-footer.php"
+				// MISE EN FORME 26/10/2023 (JL) - Parenthèses ajotuées
+				include('inc/tpl-footer.php');
+				?>
 			</div>
 
-		<?php includes 'inc/inc.js.php'; ?>
+		<?php
+		// DEBUG 26/10/2023 (JL) - Il y avait un "s" en trop à "include"
+		include('inc/inc.js.php');
+		?>
 
 	</body>
 </html>
