@@ -1,4 +1,8 @@
-<?php 
+<?php
+
+	// Redirectio automatique
+	if(isset($_SESSION['User'])) header('Location: index.php');
+
 	$message = null;
 	// DEBUG 26/10/2023 (JL) - "$_SERVER["RQUEST_METHOD"]" au lieu de "$_SERVER["REQUEST_METHOD"]"
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
