@@ -13,7 +13,6 @@
 
 <?php 
 	$_articles = getArticlesFromJson();
-
 	if($_articles && count($_articles)){
 		$compteur = 1;
 		foreach($_articles as $article){
@@ -29,7 +28,7 @@
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<img src="<?php echo $article['image'];?>" alt="" />
 					</div>
 				</section>
 
