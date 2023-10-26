@@ -18,18 +18,22 @@
 		$compteur = 1;
 		foreach($_articles as $article){
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			//ERREUR : L'incrémentation du compteur était commenté
+			$compteur++;
 			?>
-				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
+			<!-- ERREUR : l'ID étant supposeé être unique on ne l'ajoute qu'au premier tour de la boucle (car elle sert d'ancre au bouton "CONSULTER MES ARTICLES") -->
+				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" <?= $compteur === 2 ? 'id="first"' : "" ?>>
 					<div class="content">
 						<h2><?php echo $article['titre'];?></h2>
 						<p><?php echo $article['titre'];?></p>
 						<ul class="actions stacked">
+							<!-- Le href est construit afin de passer le template et l'id de l'article en argument GET -->
 							<li><a href="?page=article&id=<?php echo $article['id'];?>" class="button">Lire la suite</a></li>
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<!-- ERREUR : Coquille variable -->
+						<img src="<?php echo $article['image'];?>" alt="" />
 					</div>
 				</section>
 
