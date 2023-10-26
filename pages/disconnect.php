@@ -1,5 +1,5 @@
 <?php
 	setDisconnectUser();
-
-	header('Location:indx.php');
+	// ERREUR : Coquille redirection
+	header('Location:index.php');
 ?>

@@ -21,8 +21,8 @@
 			//ERREUR : L'incrémentation du compteur était commenté
 			$compteur++;
 			?>
-			<!-- ID first retiré : Pas d'ID en double sur la même page donc pas dans une boucle -->
-				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in">
+			<!-- ERREUR : l'ID étant supposeé être unique on ne l'ajoute qu'au premier tour de la boucle (car elle sert d'ancre au bouton "CONSULTER MES ARTICLES") -->
+				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" <?= $compteur === 2 ? 'id="first"' : "" ?>>
 					<div class="content">
 						<h2><?php echo $article['titre'];?></h2>
 						<p><?php echo $article['titre'];?></p>
