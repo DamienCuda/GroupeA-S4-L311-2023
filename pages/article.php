@@ -4,12 +4,10 @@
 
 	// ERREUR : Point d'exclamation en TROP 😆 avant la fonction count
 	// Si on un retour null de la fonction getArticleById ou si le nombre d'article n'est pas supérieur à 0
-	// On est rediriger vers l'accueil
 	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
 	}
-?>
-<!-- Sinon on génère l'article récupéré -->
+?>	
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 	<div class="content">
 		<h1><?php echo $article['titre'];?></h1>
@@ -19,6 +17,6 @@
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $article['image'];?>" alt="" />
+		<img src="<?php echo $art['image'];?>" alt="" />
 	</div>
 </section>

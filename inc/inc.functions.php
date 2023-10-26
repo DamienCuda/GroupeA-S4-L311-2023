@@ -24,11 +24,8 @@
 
     // Fin de session à la deconnection
     function setDisconnectUser(){
-        // On efface la variable de session
          unset($_SESSION['User']);
-        //  On réinitialise la session
-        //  ERREUR : coquille fonction
-         session_destroy();
+         sessions_destroy();
     }
 
 
