@@ -70,11 +70,10 @@
     function getArticleById($id_article = null){
         // ERREUR : Constante DB_ARTICLES mal orthographiée
         // Si le fichier qui sert de BDD existe bien on récupère dans une variable, décode le json et le retourne
-       if(file_exists(DB_ARTICLES)) { 
+       if(file_exists(DB_ARTICLES)) {
             $contenu_json = file_get_contents(DB_ARTICLES);
             $_articles    = json_decode($contenu_json, true);
 
-            // On récupère l'article que l'on souhaite en fonction de son ID en bouclant sur le résultat précédent
             foreach($_articles as $article){
                 if($article['id'] == $id_article){
                     return $article;
