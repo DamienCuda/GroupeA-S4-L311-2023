@@ -1,9 +1,11 @@
 <?php 
 	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
+	// DEBUG 26/10/2023 (JL) - "$_SERVER["RQUEST_METHOD"]" au lieu de "$_SERVER["REQUEST_METHOD"]"
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+				// DEBUG 26/10/2023 (JL) - $_GET['login'] au lieu de $_POST['login']
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']);
 
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");

@@ -29,7 +29,10 @@
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<img src="<?php
+						// DEBUG 26/10/2023 (JL) - $art_icle au lieu de $article
+						echo $article['image'];
+						?>" alt="" />
 					</div>
 				</section>
 

@@ -3,7 +3,8 @@
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
 
-	if(is_null($article) OR !!!!count($article)){
+	// DEBUG 26/10/2023 (JL) - Beaucoup trop de "!" pour "!count()"
+	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
 	}
 ?>	
@@ -16,6 +17,9 @@
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $art['image'];?>" alt="" />
+		<img src="<?php
+		// DEBUG 26/10/2023 (JL) - $art au lieu de $article
+		echo $article['image'];
+		?>" alt="" />
 	</div>
 </section>
