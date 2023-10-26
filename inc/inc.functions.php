@@ -1,7 +1,6 @@
 <?php
 
-    // Ouverture de session le fichier étant appelé dés le chargement de la page index.php
-    // la session est automatiquement initialisée 
+    // Ouverture de session
     session_start();
 
     // Definition des constantes
