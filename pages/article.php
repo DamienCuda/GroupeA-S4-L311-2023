@@ -3,10 +3,9 @@
 	$article = getArticleById(array_key_exists('id', $_GET) ? $_GET['id'] : null);
 
 	// ERREUR : Point d'exclamation en TROP 😆 avant la fonction count
-	// Si on un retour null de la fonction getArticleById ou si le nombre d'article n'est pas supérieur à 0
-	// On est rediriger vers l'accueil
-	// ERREUR : Modification du OR et de la condition count 
-	if(is_null($article) || count($article) == 0){
+	// Si on un retour null de la fonction getArticleById ou si count renvoi 1 (Empty array)
+	// On est rediriger vers l'accueil 
+	if(is_null($article) or !count($article)){
 		header('Location:index.php');
 	}
 ?>
