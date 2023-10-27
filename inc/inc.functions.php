@@ -33,7 +33,7 @@
     }
 
 
-    // La fonction verifie que la variable de SESSION User est instancié, non null ou vide
+    // La fonction verifie que la variable de SESSION User est instanciée, non null ou vide
     function isConnected(){
         if(array_key_exists('User', $_SESSION)  && !is_null($_SESSION['User'])  && !empty($_SESSION['User'])){
             return true;
