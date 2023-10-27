@@ -3,7 +3,7 @@
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
 
-	if(is_null($article) || count($article) == 0){
+	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
 	}
 ?>	
