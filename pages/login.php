@@ -1,9 +1,14 @@
 <?php 
+	//******* LOGIQUE DE VERIFIACTION LOGIN ******* //
 	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
+	// Si la methode est POST
+	if($_SERVER["REQUEST_METHOD"] == "POST"){	// ERREUR : Coquille REQUEST
+		// On vérifie que les login et password est bien existe et ne sont pas vide
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
-	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+	    	if(!empty($_POST['login']) && !empty($_POST['password'])){ 
+
+				// On passe les variable à la fonction qui les vérifie
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']); // ERREUR : variable GET au lieu de POST pour login
 
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
@@ -13,8 +18,10 @@
 	    	}
 	    }
 	}	
+	//******* FIN LOGIQUE DE VERIFICATION LOGIN ******* //
 ?>
 
+<!--******* AFFICHAGE ******* -->
 <section class="wrapper style1 align-center">
 	<div class="inner">
 		<div class="index align-left">

@@ -1,3 +1,4 @@
+<!-- HERO SECTION -->
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 	<div class="content">
 		<h1>Mon [ blog ].</h1>
@@ -10,17 +11,21 @@
 		<img src="images/banner.jpg" alt="" />
 	</div>
 </section>
+<!-- END HERO SECTION -->
 
+<!-- ARTICLES SECTION -->
 <?php 
 	$_articles = getArticlesFromJson();
 
 	if($_articles && count($_articles)){
 		$compteur = 1;
 		foreach($_articles as $article){
+			// On utilise un compteur et la fonction de modulo pour affecter une classe left ou right si pair ou impair
 			$classCss = ($compteur % 2 == 0 ? 'left' : 'right');
-			##$compteur++;
+			$compteur++; //ERREUR : L'incrémentation du compteur était commenté
 			?>
-				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" id="first">
+			<!-- OPTIMISATION : l'ID étant supposeé être unique on ne l'ajoute qu'au premier tour de la boucle (car elle sert d'ancre au bouton "CONSULTER MES ARTICLES") -->
+				<section class="spotlight style1 orient-<?php echo $classCss;?>  content-align-left image-position-center onscroll-image-fade-in" <?= $compteur === 2 ? 'id="first"' : "" ?>>
 					<div class="content">
 						<h2><?php echo $article['titre'];?></h2>
 						<p><?php echo $article['titre'];?></p>
@@ -29,7 +34,7 @@
 						</ul>
 					</div>
 					<div class="image">
-						<img src="<?php echo $art_icle['image'];?>" alt="" />
+						<img src="<?php echo $article['image'];?>" alt="" /><!-- ERREUR : Coquille variable -->
 					</div>
 				</section>
 
@@ -37,3 +42,4 @@
 		}
 	}
 ?>
+<!-- END ARTICLES SECTION -->
