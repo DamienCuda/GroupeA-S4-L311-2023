@@ -1,5 +1,6 @@
 <?php
+	// On utlise la fonction de déconnexion
 	setDisconnectUser();
-	// ERREUR : Coquille redirection
-	header('Location:index.php');
+	// Et on redirige vers l'accueil
+	header('Location:index.php');// ERREUR : Coquille redirection
 ?>

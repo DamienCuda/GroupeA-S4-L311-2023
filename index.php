@@ -1,7 +1,5 @@
-<!-- ERREUR : Include mal orthographié -->
-
 <!-- Appel au fichier qui regroupe les fonctions du programme pour accès ici-->
-<?php include 'inc/inc.functions.php'?>
+<?php include 'inc/inc.functions.php'?> <!-- ERREUR : Include mal orthographié -->
 
 
 <!DOCTYPE HTML>
@@ -22,19 +20,19 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 
-				// ERREUR : Fonction disponible dans le fichier inc/inc.functions.php mal orthographié s en trop
-					getPageTemplate(
-						// ERREUR : fonction php mal othographié
+					getPageTemplate( // ERREUR : Fonction disponible dans le fichier inc/inc.functions.php mal orthographié s en trop
 						// On passe soit le nom du template, soit null à la fonction
-						array_key_exists('page', $_GET) ? $_GET['page'] : null
+						array_key_exists('page', $_GET) ? $_GET['page'] : null // ERREUR : fonction php mal othographié
 					); 
 				?>
-				<!-- ERREUR : nom de fichier mal orthographié -->
-				<?php include 'inc/tpl-footer.php'; ?>
+
+				<!-- FOOTER -->
+				<?php include 'inc/tpl-footer.php'; ?> <!-- ERREUR : nom de fichier mal orthographié -->
+
 			</div>
 
-		<!-- ERREUR : Include mal orthographié -->
-		<?php include 'inc/inc.js.php'; ?>
+		<!-- SCRPTS JS -->
+		<?php include 'inc/inc.js.php'; ?> <!-- ERREUR : Include mal orthographié -->
 
 	</body>
 </html>
