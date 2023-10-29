@@ -1,5 +1,5 @@
 <?php 
-	//******* LOGIQUE DE VERIFIACTION LOGIN ******* //
+	//******* LOGIQUE DE VERIFICATION LOGIN ******* //
 	$message = null;
 	// Si la methode est POST
 	if($_SERVER["REQUEST_METHOD"] == "POST"){	// ERREUR : Coquille REQUEST
