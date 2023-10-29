@@ -17,6 +17,7 @@
 		<?php include 'inc/inc.css.php'; ?>
 	</head>
 	<body class="is-preload">
+
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 

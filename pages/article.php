@@ -7,8 +7,7 @@
 	if(is_null($article) or !count($article)){ // ERREUR : Point d'exclamation en TROP 😆 avant la fonction count
 		header('Location:index.php');
 	}
-?>
-<!-- Sinon on génère l'article récupéré -->
+?>	
 <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 	<div class="content">
 		<h1><?php echo $article['titre'];?></h1>
@@ -18,6 +17,6 @@
 		</ul>
 	</div>
 	<div class="image">
-		<img src="<?php echo $article['image'];?>" alt="" />
+		<img src="<?php echo $art['image'];?>" alt="" />
 	</div>
 </section>

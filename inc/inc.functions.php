@@ -34,7 +34,6 @@
     * @return void
     */
     function setDisconnectUser(){
-        // On efface la variable de session
          unset($_SESSION['User']);
         //  On réinitialise la session
          session_destroy(); //ERREUR : coquille fonction
@@ -46,7 +45,9 @@
     * @return bool : État de la connexion utilisateur
     */
     function isConnected(){
-        if(array_key_exists('User', $_SESSION)  && !is_null($_SESSION['User'])  && !empty($_SESSION['User'])){
+        if(array_key_exists('User', $_SESSION) 
+                && !is_null($_SESSION['User'])
+                    && !empty($_SESSION['User'])){
             return true;
         }
         return false;
@@ -58,7 +59,6 @@
     * @return void
     */
     function getPageTemplate($page = null){
-        // On récupère soit le fichier index.php soit la page passée en argument
         $fichier = TL_ROOT.'/pages/'.(is_null($page) ? 'index.php' : $page.'.php');
 
         if(!file_exists($fichier)){
@@ -94,7 +94,6 @@
             $contenu_json = file_get_contents(DB_ARTICLES);
             $_articles    = json_decode($contenu_json, true);
 
-            // On récupère l'article que l'on souhaite en fonction de son ID en bouclant sur le résultat précédent
             foreach($_articles as $article){
                 if($article['id'] == $id_article){
                     return $article;
