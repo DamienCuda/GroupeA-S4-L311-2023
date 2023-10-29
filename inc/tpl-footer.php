@@ -7,7 +7,7 @@
 
 <!-- Sticky -->
 <!-- <?php
-// Le bouton se connecter n'apparait pas si l'on est sur la page de connection
+// Le bouton se connecter n'apparait pas si l'on est sur la page de connexion
  if(!isset($_GET['page']) || ($_GET['page'] != 'login')){ ?> -->
 	<span class="sticky">
 		<?php 
